@@ -6,3 +6,83 @@ Medium green: #55c57a
 Dark green: #28b485
 
 */
+
+/* Basic reset w/ universal selector selects all elements on the page and applies declarations to them */
+* {
+    /* most browsers apply some margin or padding to elements, which we don't want  */
+    margin: 0;
+    padding: 0;
+    /* changes box model so that borders and paddings are not added to total width/height for a box. */
+    box-sizing: border-box;
+}
+
+/* properties related to font are usually inherited, so we put in body because it's the parent of all other child elements of the body */
+body {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    /* line height will be 1.7 x bigger than the predefined line height */
+    line-height: 1.7;
+    color: #777;
+    padding: 30px;
+}
+
+.header {
+    height: 95vh;
+    /* to specify gradients, we always use the background image property,
+    the gradient color must be the first one specified
+    if desired, you can include direction before the color */
+    background-image: linear-gradient(
+        to right bottom,
+        rgba(126, 213, 111, 0.8),
+        rgba(40, 180, 131, 0.8)),
+        url(../img/hero.jpg);
+    /* cover always tries to fit the element to the size of the viewport */
+    background-size: cover;
+    /* whatever the viewport size, the top of the image always stays at the top of the container */
+    background-position: top;
+    position: relative;
+
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    
+}
+
+.logo-box {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+}
+
+.logo {
+    height: 35px;
+}
+
+.text-box {
+    position: absolute;
+    /* to center an element:
+        - shift the element from the top and side of the parent by 50% each (in relation to parent)
+        - transform the element's start point to the center of the element itself (in relation to element itself)
+    */
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.heading-primary {
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.heading-primary-main {
+    display: block;
+    font-size: 60px;
+    font-weight: 400;
+    letter-spacing: 35px;
+}
+
+.heading-primary-sub {
+    display: block; 
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 17.4px;
+}
